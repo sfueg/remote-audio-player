@@ -48,6 +48,7 @@ struct MQTTPlaySoundEvent {
     id: String,
     path: String,
     is_loop: Option<bool>,
+    overwrite: Option<bool>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -125,6 +126,11 @@ async fn main() {
             while let Ok(message) = rx.try_recv() {
                 match message {
                     MQTTEvent::PlaySound(e) => {
+                        if e.overwrite.unwrap_or(true) == false && state.sounds.contains_key(&e.id)
+                        {
+                            continue;
+                        }
+
                         let file = std::fs::File::open(e.path);
 
                         match file {
