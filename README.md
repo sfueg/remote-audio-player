@@ -1,22 +1,39 @@
 # Remote Audio
 
-```json
+## Play a sound
+
+```jsonc
 {
   "type": "PlaySound",
+
+  // Id of the sound. Use this to stop or change the sound later on
   "id": "test",
+
+  // Path to the audio file
   "path": "path/to/audio.wav",
-  "is_loop": true // Optional
+
+  // Play the sound in a loop
+  "is_loop": false, // Optional (Default: false)
+
+  // If a sound exists with the same id
+  //   true: Stop the exisiting sound and start a new one
+  //   false: Don't do anything
+  "overwrite": true // Optional (Default: true)
 }
 ```
 
-```json
+## Stop a sound
+
+```jsonc
 {
   "type": "StopSound",
   "id": "test"
 }
 ```
 
-```json
+## Set volume
+
+```jsonc
 {
   "type": "SetVolume",
   "id": "test",
@@ -24,7 +41,9 @@
 }
 ```
 
-```json
+## Fade to a volume
+
+```jsonc
 {
   "type": "FadeToVolume",
   "id": "test",
