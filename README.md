@@ -1,6 +1,27 @@
 # Remote Audio
 
-## Play a sound
+A simple audio player that is controllable with MQTT
+
+## CLI
+
+```
+Usage: remote-audio.exe [OPTIONS]
+
+Options:
+  -s, --server <SERVER>  [default: localhost]
+  -p, --port <PORT>      [default: 1883]
+  -t, --topic <TOPIC>    [default: remoteaudio/commands]
+  -c, --client <CLIENT>  [default: remoteaudio]
+  -d, --debug
+  -h, --help             Print help
+  -V, --version          Print version
+```
+
+## Commands
+
+Send these JSON Payloads to the topic that you set with `--topic`.
+
+### Play a sound
 
 ```jsonc
 {
@@ -22,7 +43,7 @@
 }
 ```
 
-## Stop a sound
+### Stop a sound
 
 ```jsonc
 {
@@ -31,7 +52,7 @@
 }
 ```
 
-## Set volume
+### Set volume
 
 ```jsonc
 {
@@ -41,7 +62,7 @@
 }
 ```
 
-## Fade to a volume
+### Fade to a volume
 
 ```jsonc
 {
