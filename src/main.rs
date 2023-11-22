@@ -21,10 +21,10 @@ struct Args {
     #[arg(short, long, default_value_t = 1883)]
     port: u16,
 
-    #[arg(short, long, default_value_t = String::from("remoteaudio/commands"))]
+    #[arg(short, long, default_value_t = String::from("remoteaudioplayer/commands"))]
     topic: String,
 
-    #[arg(short, long, default_value_t = String::from("remoteaudio"))]
+    #[arg(short, long, default_value_t = String::from("remoteaudioplayer"))]
     client: String,
 
     #[arg(short, long, default_value_t = true)]

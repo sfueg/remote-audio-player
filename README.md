@@ -1,17 +1,17 @@
-# Remote Audio
+# Remote Audio Player
 
 A simple audio player that is controllable with MQTT
 
 ## CLI
 
 ```
-Usage: remote-audio.exe [OPTIONS]
+Usage: remote-audio-player.exe [OPTIONS]
 
 Options:
   -s, --server <SERVER>  [default: localhost]
   -p, --port <PORT>      [default: 1883]
-  -t, --topic <TOPIC>    [default: remoteaudio/commands]
-  -c, --client <CLIENT>  [default: remoteaudio]
+  -t, --topic <TOPIC>    [default: remoteaudioplayer/commands]
+  -c, --client <CLIENT>  [default: remoteaudioplayer]
   -d, --debug
   -h, --help             Print help
   -V, --version          Print version
